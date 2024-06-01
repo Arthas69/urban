@@ -26,4 +26,4 @@ for num in numbers:
     else:
         not_primes.append(num)
 
-print(primes, not_primes, sep='\n')
+print(f"Primes: {primes}", f"Not Primes: {not_primes}", sep='\n')
