@@ -21,7 +21,5 @@ data_structure = [
   ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
 
-list_ = [1, 100, 50]
 
-
-print(calculate_sum_of_digits(data_structure, list_))
+print(calculate_sum_of_digits(data_structure))
