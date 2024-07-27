@@ -8,8 +8,8 @@ class WordsFinder(object):
 
     def get_all_words(self):
         if not self.words:
-            all_words = []
             for file_name in self.file_names:
+                all_words = []
                 with open(file_name, 'r', encoding='utf-8') as file:
                     for line in file:
                         all_words.extend(
