@@ -19,7 +19,7 @@ class Knight(Thread):
             self.enemies -= self.strength
             days += 1
             sleep(1)
-            print(f'{self.name} fights for {max(days, 0)}..., {self.enemies} enemies remaining')
+            print(f'{self.name} fights for {days}..., {max(self.enemies, 0)} enemies remaining')
 
 
 # Создание класса
