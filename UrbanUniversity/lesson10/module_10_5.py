@@ -15,20 +15,25 @@ def read_info(name):
 
 
 files = os.listdir(os.path.join('.', 'Files'))
-#
-#
-# start = datetime.datetime.now()
-# for file in files:
-#     path = os.path.join(os.path.dirname(__file__), 'Files', file)
-#     read_info(path)
-#
-# end = datetime.datetime.now()
-# print(end - start)
 
 
-if __name__ == '__main__':
-    with multiprocessing.Pool(processes=8) as pool:
+def linear_execution(file_list):
+    start = datetime.datetime.now()
+    for file in file_list:
+        path = os.path.join(os.path.dirname(__file__), 'Files', file)
+        read_info(path)
+    end = datetime.datetime.now()
+    print(end - start)
+
+
+def multiprocessing_execution(file_list):
+    with multiprocessing.Pool(processes=4) as pool:
         start = datetime.datetime.now()
         pool.map(read_info, [os.path.join(os.path.dirname(__file__), 'Files', file) for file in files])
         end = datetime.datetime.now()
         print(end - start)
+
+
+if __name__ == '__main__':
+    linear_execution(files)
+    # multiprocessing_execution(files)
