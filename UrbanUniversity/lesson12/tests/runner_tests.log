@@ -1,0 +1,16 @@
+2024-09-16 15:42:31,119 - WARNING - Wrong data type for Runner
+Traceback (most recent call last):
+  File "/some/path/here/UrbanUniversity/lesson12/tests/test_12_4.py", line 27, in test_run
+    runner = Runner(2)
+             ^^^^^^^^^
+  File "/some/path/here/UrbanUniversity/lesson12/rt_with_exceptions.py", line 6, in __init__
+    raise TypeError(f'Имя может быть только строкой, передано {type(name).__name__}')
+TypeError: Имя может быть только строкой, передано int
+2024-09-16 15:42:31,122 - WARNING - Wrong speed for Runner
+Traceback (most recent call last):
+  File "/some/path/here/UrbanUniversity/lesson12/tests/test_12_4.py", line 15, in test_walk
+    runner = Runner('John', -5)
+             ^^^^^^^^^^^^^^^^^^
+  File "/some/path/here/UrbanUniversity/lesson12/rt_with_exceptions.py", line 11, in __init__
+    raise ValueError(f'Скорость не может быть отрицательной, сейчас {speed}')
+ValueError: Скорость не может быть отрицательной, сейчас -5

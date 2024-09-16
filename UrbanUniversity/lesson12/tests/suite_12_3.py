@@ -1,8 +1,6 @@
 import unittest
 
-import test_12_1
-import test_12_2
-
+from lesson12.tests import test_12_1, test_12_2
 
 test_suite = unittest.TestSuite()
 test_suite.addTest(unittest.TestLoader().loadTestsFromTestCase(test_12_1.RunnerTest))
