@@ -30,11 +30,11 @@ cursor.execute("DELETE FROM users WHERE mod(id, 3) == ?", (1, ))
 
 db.commit()
 
-cursor.execute("SELECT username, email, age, balance FROM users WHERE age != ?", (60,))
-
-all_data = cursor.fetchall()
-for row in all_data:
-    print("Имя: {} | Почта: {} | Возраст: {} | Баланс: {}".format(*row))
+# cursor.execute("SELECT username, email, age, balance FROM users WHERE age != ?", (60,))
+#
+# all_data = cursor.fetchall()
+# for row in all_data:
+#     print("Имя: {} | Почта: {} | Возраст: {} | Баланс: {}".format(*row))
 
 cursor.execute("DELETE FROM users WHERE id == 6")
 

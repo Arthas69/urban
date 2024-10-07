@@ -1,4 +1,3 @@
-import os
 import sqlite3
 
 DB_NAME = 'not_telegram.db'
