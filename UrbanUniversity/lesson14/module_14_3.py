@@ -66,7 +66,7 @@ async def info(message: types.Message):
 @dp.message_handler(Text('Купить', ignore_case=True))
 async def get_buying_list(message: types.Message):
     for i in range(1, 5):
-        with open(f'bot/images/product{i}.jpg', 'rb') as img:
+        with open(f'./images/product{i}.jpg', 'rb') as img:
             await message.answer_photo(
                 img,
                 caption=f'Название: Product{i} | Описание: описание {i} | Цена: {i * 100}',
