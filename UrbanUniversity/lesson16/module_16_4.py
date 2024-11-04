@@ -36,9 +36,10 @@ async def update_user(
         username: Annotated[str, Path(min_length=5, max_length=20, description="Enter username", example='UrbanUser')],
         age: Annotated[int, Path(ge=18, le=120, description="Enter age", example='24')]) -> User:
     try:
-        users[user_id].username = username
-        users[user_id].age = age
-        return users[user_id]
+        user = users[user_id - 1]
+        user.username = username
+        user.age = age
+        return user
     except IndexError:
         raise HTTPException(status_code=404, detail="User was not found")
 
@@ -46,7 +47,7 @@ async def update_user(
 @app.delete('/users/{user_id}')
 async def delete_user(user_id: int) -> User:
     try:
-        user_del = users.pop(user_id)
+        user_del = users.pop(user_id - 1)
         return user_del
     except IndexError:
         raise HTTPException(status_code=404, detail="User was not found")
