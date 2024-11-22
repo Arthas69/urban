@@ -16,3 +16,7 @@ class User(Base):
     parent_id = Column(Integer, ForeignKey('categories.id'), nullable=True)
 
     tasks = relationship('Task', back_populates='user')
+
+
+from sqlalchemy.schema import CreateTable
+print(CreateTable(User.__table__))
